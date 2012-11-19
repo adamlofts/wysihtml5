@@ -70,17 +70,6 @@
 
       startInterval();
 
-      if (form) {
-        // If the textarea is in a form make sure that after onreset and onsubmit the composer
-        // has the correct state
-        wysihtml5.dom.observe(form, "submit", function() {
-          that.sync(true);
-        });
-        wysihtml5.dom.observe(form, "reset", function() {
-          setTimeout(function() { that.fromTextareaToComposer(); }, 0);
-        });
-      }
-
       this.editor.on("change_view", function(view) {
         if (view === "composer" && !interval) {
           that.fromTextareaToComposer(true);
