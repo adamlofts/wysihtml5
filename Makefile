@@ -87,7 +87,7 @@ bundle:
 
 minify:
 	@@echo "Minifying... (this requires node.js)"
-	@@node build/minify.js ${JS_OUTPUT}
+	js build/minify.js ${JS_OUTPUT}
 	@@echo "Done."
 
 unittest:
